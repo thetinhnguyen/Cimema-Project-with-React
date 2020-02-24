@@ -1,0 +1,44 @@
+.LoginPage{
+    margin: 0 0;
+    margin-top: 70px;
+    padding: 3rem 0;
+    background: linear-gradient(to top,rgba(0, 0, 0,1),rgba(0, 0, 0,.85));
+    color: white;
+       
+    .LoginPage_kind{
+        width: 90%;
+        margin: 0 auto;
+        
+        text-align: center;
+    
+        text-align: center;
+       display: flex;
+       justify-content: center;
+        p{
+            transition: all .5s;
+            cursor: pointer;
+            font-size: 30px;
+            &.active{
+                color: #fb4226;
+            }
+            &:hover{
+                color: #fb4226;
+            }
+            &:first-child{
+                padding-right: 1.5rem;
+            }
+            &:last-child{
+                padding-right: 1.5rem;
+            }
+      
+
+       }
+     
+    
+   
+    }
+    .LoginPage_item{
+        width: 40%;
+        margin: 0 auto;
+    }
+}

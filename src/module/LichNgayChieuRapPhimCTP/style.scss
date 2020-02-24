@@ -1,0 +1,34 @@
+.LichNgayChieuRapPhimCTP{
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #f1f1f1;
+    padding: .5rem;
+    .NgayChieu{
+        cursor: pointer;
+        transition: all .5s;
+        &:hover{
+            color: #fb4226;
+        }
+    }
+    .LichChieu{
+     
+        .LichChieu-view{
+            margin-top: .5rem;
+            span{
+                margin-left: 1rem;
+            }
+
+        }
+        .LichChieu-list{
+            a{
+                margin: 7px;
+                &:focus{
+                    box-shadow: none;
+                }
+                &:hover{
+                    color: #fb4226;
+                }
+            }
+
+        }
+    }
+}

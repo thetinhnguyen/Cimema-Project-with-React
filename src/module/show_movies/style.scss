@@ -1,0 +1,42 @@
+.show_movies{
+    margin-bottom: 3rem;
+    .owl-carousel{
+        
+        .owl-nav{
+           
+            >*:hover{
+                background-color: red;
+
+            }
+        }
+       
+
+    }
+    .movies-nav{
+        display: flex;
+        margin: 2rem 0;
+        cursor: pointer;
+        transition: all .5s;
+        p{
+            width: 50%;
+            margin-left: 1rem;
+            font-size: 20px;
+            transition: all .5s;
+            &:hover{
+                font-size: 24px;
+            }
+            &:first-child{
+                text-align: right;
+                margin-right: 1rem;
+                margin-left: 0;
+        }
+            
+        }
+        
+    }
+
+}
+.actives{
+    color: red;
+
+}

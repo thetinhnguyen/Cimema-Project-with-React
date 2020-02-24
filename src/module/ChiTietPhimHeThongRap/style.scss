@@ -1,0 +1,67 @@
+
+.HeThongRapChieuCTP{
+    width: 100%;
+    padding: 0 10px;
+    height: 100%;
+    border-right: 2px solid #f1f1f1;
+    overflow-y: auto;
+    &::-webkit-scrollbar {
+        width: 2px;
+      }
+      
+      /* Track */
+      &::-webkit-scrollbar-track {
+        background: #f1f1f1; 
+      }
+       
+      /* Handle */
+      &::-webkit-scrollbar-thumb {
+        background: #888; 
+      }
+      
+      /* Handle on hover */
+      &::-webkit-scrollbar-thumb:hover {
+        background: #555; 
+      }
+    
+
+    
+
+    .HeThongRapChieuCTP_Item{
+        display:flex;
+        padding: 1rem 0;
+        border-bottom: 1px solid #f1f1f1;
+        opacity: 0.6;
+        cursor: pointer;
+        transition: .5s;
+        &.active{
+            opacity: 1;
+        }
+        &:hover{
+            opacity: 1;
+        }
+        .HeThongRapChieuCTP_Item_img{
+            img{
+                display: block;
+                width: 80px;
+                height: 80px;
+                border-radius: 100%;
+                border: 1px solid #f1f1f1;
+            }
+
+        }
+        .HeThongRapChieuCTP_Item_name{
+            text-align: center;
+            width: 120px;
+            position: relative;
+            p{
+               
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 100%;
+                transform: translate(-50%,-50%);
+            }
+        }
+    }
+}

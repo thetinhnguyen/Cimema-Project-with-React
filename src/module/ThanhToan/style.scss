@@ -1,0 +1,185 @@
+.thanhtoan{
+    height: 100%;
+    position: relative;
+
+    .thanhtoan_top{
+        overflow-y: auto;
+        height: 90%;
+        margin: 0 1.5rem;
+        margin-right: 0;
+        &::-webkit-scrollbar {
+            width:  2px;
+          }
+        &::-webkit-scrollbar-track {
+            background: #f1f1f1; 
+          }
+           
+          /* Handle */
+          &::-webkit-scrollbar-thumb {
+            background: #888; 
+          }
+          
+          /* Handle on hover */
+          &::-webkit-scrollbar-thumb:hover {
+            background: #555; 
+          }
+        .thanhtoan_tongtien{
+            margin: 0 auto;
+            padding: 2rem 0;
+            border-bottom: 1px solid #f1f1f1;
+            h5{
+                color: #44c020;
+                font-size: 30px;
+                text-align: center;
+            }
+        }
+        
+        .thanhtoan_thongtinlc{
+            padding: 1rem 0;
+            border-bottom: 1px solid #f1f1f1;
+            p{
+                margin: 0;
+               
+                &:first-child{
+                    color: #fb4226;
+                    font-size: 18px;
+                }
+                &:last-child{
+                    font-weight: lighter;
+                }
+                
+                
+            }
+        }
+        .content_thanhtoan{
+            display: flex;
+            padding: 1rem 0;
+            border-bottom: 1px solid #f1f1f1;
+           
+            .item1{
+               &.choncombo{
+                cursor: pointer;
+
+               }
+                width: 60%;
+                display: flex;
+                flex-wrap: wrap;
+                img{
+                    display: inline-block;
+                    width: 20px;
+                    height: 20px;
+                    margin-right: .5rem;
+                    &+p{
+                        color: #fb4226;
+                        
+                    }
+                }
+               
+                p{
+                    padding-right: 1rem;
+                    color: green;
+                    &:first-child{
+                        color: #fb4226;
+                       
+                    
+                    }
+                }
+    
+            }
+            .item2{
+                width: 40%;
+                color: #44c020;
+                text-align: right;
+                padding-right: 10px;
+                font-weight: bold;
+    
+            }
+        }
+        .email{
+            padding: 1rem 0;
+            border-bottom: 1px solid #f1f1f1;
+           
+            p{
+                margin: 0;
+                &:first-child{
+                    color: #9d9d9d;
+                }
+            }
+        }
+
+    }
+    .thanhtoan_bottom{
+        height: 10%;
+        text-align: center;
+        background-color: #9d9d9d;
+        &.active{
+            background-color: #44c020;
+        }
+        position: relative;
+        cursor: pointer;
+        h5{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            color: white;
+            font-weight: lighter;
+
+        }
+    }
+    .modal-combos{
+        position: absolute;
+        top: 0;
+        right: 100%;
+        width: 200%;
+        height: 100%;
+        background-color: rgba($color: #262626, $alpha: .8);
+       overflow: hidden;
+       display: none;
+       .combos{
+        position: absolute;
+        padding-top: 2rem;
+        top: 0;
+        left: 30%;
+        width: 70%;
+        height: 100%;
+        background-color: #f1f1f1;
+        overflow-y: auto;
+        &::-webkit-scrollbar {
+            width:  4px;
+          }
+        &::-webkit-scrollbar-track {
+            background: #f1f1f1; 
+          }
+           
+          /* Handle */
+          &::-webkit-scrollbar-thumb {
+            background: #888; 
+          }
+          
+          /* Handle on hover */
+          &::-webkit-scrollbar-thumb:hover {
+            background: #555; 
+          }
+          padding: 1rem 1rem;
+          padding-bottom: 1rem;
+        
+
+          .combo_heading{
+          
+             
+              &>h5{
+                color: #fb4226;
+                text-align: center;
+                font-size: 20px;
+                margin-bottom: 1rem;
+              }
+          }
+        
+
+       }
+        
+    }
+  
+
+}

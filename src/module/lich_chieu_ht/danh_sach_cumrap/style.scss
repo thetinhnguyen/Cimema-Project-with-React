@@ -1,0 +1,65 @@
+.list-cumrap-contain{
+ 
+    ::-webkit-scrollbar {
+      width: 2px;
+    }
+   
+    height: 500px;
+    ::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+  
+    ::-webkit-scrollbar-thumb {
+      background: #9b9b9b;
+    }
+    .list-cumrap{
+      height: 100%;
+      overflow-y: scroll;
+     
+      .cumrap{
+        display: flex;
+        opacity: .4;
+        transition: all .5s;
+        height: 100px;
+        cursor: pointer;
+        overflow-x: hidden;
+        &.cumrap-active{
+            opacity: 1;
+        }
+        &:hover{
+          opacity: 1;
+        }
+    
+        .cumrap-img{
+        padding: 0;
+          img{
+            display: block;
+            width: 50px;
+            height: 50px;
+          }
+         
+        }
+        .cumrap-chitiet{
+          margin-left: 1rem;
+       
+          h5{
+            color: brown;
+            font-size: 14px;
+          }
+          p{
+            margin: 0;
+            white-space: nowrap; 
+            width: 80%; 
+            overflow: hidden;
+            text-overflow: ellipsis; 
+        
+          
+         
+          }
+        }
+    
+      }
+    }
+  
+  }
+  
