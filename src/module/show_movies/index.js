@@ -4,8 +4,10 @@ import OwlCarousel from 'react-owl-carousel2';
 import {getMovies_asyc,showMovies} from '../../redux/actions/ShowMoviesAction'
 import {connect} from 'react-redux'
 import './style.scss'
+import Hidden from '@material-ui/core/Hidden';
 
 import CardMovie from './CardMovie/index'
+import CardMovieMoble from '../card-movie-moble';
 
 
 export class ShowMovies extends Component {
@@ -74,7 +76,9 @@ export class ShowMovies extends Component {
         };
         const {currentMovies,comingMoives}=this.state
         return (
-          <div className='show_movies' id='show_movies'>
+          <div  id='show_movies'>
+            
+            <div className='show_movies'>
             <div className='movies-nav'>
               <p onClick={()=>this.changeShow(0)}
               className={currentMovies? 'actives' : ''}
@@ -87,6 +91,11 @@ export class ShowMovies extends Component {
               >Sắp Chiếu</p>
              
             </div>
+            <Hidden smUp>
+            <CardMovieMoble movies={currentMovies ? this.props.movies_abc.slice(0,6) : this.props.movies_abc.slice(6,11) } />
+
+            </Hidden>
+            <Hidden xsDown>
             {movies.length>0 && <OwlCarousel  options={options} 
             
             >
@@ -96,14 +105,21 @@ export class ShowMovies extends Component {
                     
                 )}
             </OwlCarousel>}
+
+            </Hidden>
+          
+          
       {/* <ModalMovies /> */}
         </div>
+          </div>
+          
         )
     }
 }
 const mapStateToProps=state=>{
   return {
-    movies: state.moviesReducers.moviesShow
+    movies: state.moviesReducers.moviesShow,
+    movies_abc: state.moviesReducers.movies
   }
 
 }

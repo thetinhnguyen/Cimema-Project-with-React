@@ -68,7 +68,7 @@ export class GheNgoi extends Component {
         return (
             <div className={`GheNgoi${nameClass}`} onClick={this.handleGhe}>
                
-        {choose && this.props.ghe && <span>{this.props.ghe.stt}</span>}
+        {choose && this.props.ghe && this.props.ghe.stt}
             </div>
         )
     }

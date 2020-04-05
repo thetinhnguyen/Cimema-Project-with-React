@@ -19,6 +19,7 @@ const RapChieuPhim = (state = initialState, action) => {
     case actionType.GET_DANHSACHPHONGVE:
       state.danhSachPhongVe = { ...action.danhSachPhongVe };
       state.dsComBo=[...JSON.parse(JSON.stringify(ComBo))]
+      state.danhSachGheChon=[]
       state.loading = false;
       return { ...state };
     case actionType.ADDGHE:

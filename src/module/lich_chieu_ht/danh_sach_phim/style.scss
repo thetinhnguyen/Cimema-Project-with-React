@@ -14,7 +14,7 @@
   
     .lichchieu-list{
       height: 100%;
-      overflow-y: scroll;
+      overflow-y: auto;
       .lichchieu-item{
         margin-bottom: 2rem;
         .lichchieu-movie{
@@ -37,13 +37,15 @@
             width: 100%;
            
             .movie-name{
-              display: flex;
+              // display: flex;
               width: 100%;
+              padding-left: 1rem;
               p{
                 margin: 0;
+                // padding: 0 .5rem;
                 &:first-child{
                   font-weight: bold;
-                  padding: 0 .5rem;
+                
 
                 }
               

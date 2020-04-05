@@ -1,23 +1,27 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import "./style.scss";
-import { connect } from "react-redux";
 
-export class Footer extends Component {
-  static propTypes = {};
+import {dsDoiTac} from '../../Constant/index'
+ class Footer extends Component {
+  static propTypes = {
+    dsDoiTac: PropTypes.array
+  };
 
   render() {
     const { dsDoiTac } = this.props;
-
+    
     return (
       <footer>
         <div className="container">
-            <div className='footer-top mb-5'>
-            <div className='row mb-4'>
-         <div className="col-2 heading">
+            <div className='footer-top mb-5 '>
+            
+            <div >
               <h5>Business</h5>
             </div>
-            <div className="col-10 content doitac">
+            <div className=' mb-4'>
+      
+            <div className=" content doitac">
               {dsDoiTac &&
                 dsDoiTac.map((item, index) => (
                   <div className="footer-doitac" key={index}>
@@ -27,11 +31,12 @@ export class Footer extends Component {
             </div>
 
          </div>
-         <div className='row mb-4'>
-         <div className="col-2 heading">
+         <div className=" heading pl-0">
               <h5>Mobile App</h5>
             </div>
-            <div className="col-10 content app">
+         <div className=' mb-4'>
+        
+            <div className=" content app">
               <div className="footer-appitem">
                 <i className="fab fa-android"></i>
               </div>
@@ -42,11 +47,11 @@ export class Footer extends Component {
 
 
          </div>
-         <div className='row'>
-         <div className="col-2 heading">
+         <div className=''>
+         <div className=" heading">
               <h5>Social</h5>
             </div>
-            <div className="col-10 content social">
+            <div className=" content social">
                 <div className='footer-socialitem'>
                 <i className="fab fa-facebook-f"></i>
 
@@ -84,8 +89,12 @@ export class Footer extends Component {
     );
   }
 }
-const mapPropsToState = state => ({
-  dsDoiTac: [...state.lichChieuHeThong.heThongList]
-});
+// const mapPropsToState = state => ({
+//   dsDoiTac: [...state.lichChieuHeThong.heThongList]
+// });
 
-export default connect(mapPropsToState, null)(Footer);
+Footer.defaultProps = {
+  dsDoiTac
+};
+
+export default Footer

@@ -12,10 +12,10 @@ const moviesReducers=(state=initialState,action)=>{
             return {...state}
         case Type.SHOW_MOVIES:
             if(action.check===0){
-                state.moviesShow=[...state.movies.slice(0,10)]
+                state.moviesShow=[...state.movies.slice(0,6)]
             }
             else{
-                state.moviesShow=[...state.movies.slice(13,19)]
+                state.moviesShow=[...state.movies.slice(6,11)]
             }
         return {...state}
         default:

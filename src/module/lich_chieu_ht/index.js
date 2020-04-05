@@ -7,6 +7,8 @@ import {getLayDsHeThong_asyc,getLAyDsMovies_asyc,getCHiTietHeThongs_asyc} from '
 import HeThongList from './danh_sach_ht/index'
 import CumRapList from './danh_sach_cumrap/index'
 import LichChieuPhim from './danh_sach_phim/index'
+import Hidden from '@material-ui/core/Hidden';
+import SeachLichChieuHeThongMoble from '../seach-lich-chieu-ht-moble/index'
 export class SerchLichChieuHeThong extends Component {
     static propTypes = {
         layDanhSachHeThong:PropTypes.func,
@@ -19,15 +21,31 @@ export class SerchLichChieuHeThong extends Component {
     }
     render() {
         return (
-            <div className='container search-movies' id='search-movies'>
-                <HeThongList />
+         <div id='search-movies'>
+              <Hidden smDown>
+                       <div className='container search-movies' >
+
+
+<HeThongList />
                 <div className='row '>
                     <CumRapList />
                     <LichChieuPhim />
                 </div>
+                </div>
+             
+
+                </Hidden>
+                <Hidden mdUp>
+                   <SeachLichChieuHeThongMoble />
+
+                </Hidden>
+
+         </div>
+               
+              
 
                 
-            </div>
+          
         )
     }
 

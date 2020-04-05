@@ -8,6 +8,8 @@ import {connect} from 'react-redux'
 import { get_licChieuMovie_asyn,changeLoadingCTP,change_Youtube,getLayDsHeThong_asyc } from '../../redux/actions/LichChieuHeThongAction'
 import Star from '../star/Star'
 import {ScrollToDestination} from '../../Support/index'
+import Hidden from '@material-ui/core/Hidden';
+import ChiTietPhimMoble from '../chi-tiet-phim-moble'
 export class ChiTietPhim extends Component {
     constructor(props) {
         super(props)
@@ -48,7 +50,9 @@ export class ChiTietPhim extends Component {
         const {lichChieu,thongTin,danhGia}=this.state
         const {chiTietPhim}=this.props
         return (
-            <div className=' chiTietPhim ' style={{
+            <div  className=' chiTietPhim '>
+                <Hidden smDown >
+                <div className=' chiTietPhim ' style={{
                 backgroundImage:  `url('${chiTietPhim.hinhAnh}')`}}>
                 <div className='over-flay'>
                 <div className='container'>
@@ -98,7 +102,16 @@ export class ChiTietPhim extends Component {
                 </div>
            
               </div>
-           
+    
+
+                </Hidden>
+               <Hidden mdUp>
+                   <ChiTietPhimMoble />
+               </Hidden>
+
+      
+            </div>
+         
         )
     }
 }

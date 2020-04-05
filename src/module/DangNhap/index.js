@@ -37,15 +37,13 @@ export class DangNhap extends Component {
           })
             .then(result => {
                 localStorage.setItem(nameOfLocalStore.TaiKhoan,JSON.stringify(result.data))
-                if(JSON.parse(localStorage.getItem(nameOfLocalStore.TaiKhoan)).maLoaiNguoiDung==="KhachHang"){
+                if(JSON.parse(localStorage.getItem(nameOfLocalStore.TaiKhoan)).maLoaiNguoiDung){
                   
                     $("#thongbaodangnhap").modal("show")
                     setTimeout(()=>{
                       $("#thongbaodangnhap").modal("hide")
                       window.history.back()
                     },800)
-                   
-
                   
                   
                 }

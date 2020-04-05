@@ -1,0 +1,12 @@
+.focus-bottom{
+    &:focus{
+        outline: none;
+    }
+}
+.link{
+    text-decoration: none;
+    color: black;
+    &:hover{
+        text-decoration: none;
+    }
+}

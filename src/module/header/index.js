@@ -4,17 +4,23 @@ import './style.scss'
 import { NavLink } from "react-router-dom";
 import {ScrollToDestination} from '../../Support/index'
 import {nameOfLocalStore,DANGKY} from '../../Constant/index'
+import NavMobile from "../navmobile";
+import {custumNAvMoble} from '../../Support/index'
 export class Header extends Component {
   static propTypes = {
     userImg: PropTypes.string
   };
   checkCondition=(check)=>{
+    custumNAvMoble('100vw',200)
     if(check===1){
       ScrollToDestination(document.getElementById('show_movies').offsetTop,7)
 
     }
     else if(check===2){
       ScrollToDestination(document.getElementById('search-movies').offsetTop,11)
+    }
+    else if(check===3){
+      ScrollToDestination(document.getElementById('tintuc').offsetTop,15)
     }
 
   }
@@ -43,11 +49,15 @@ export class Header extends Component {
       localStorage.setItem(DANGKY,'abc')
     }
   }
+  openNavMoble=()=>{
+    custumNAvMoble(0,400)
+  }
 
   render() {
     const {  userImg } = this.props;
     return (
       <header>
+      <NavMobile bookMark={this.scrollToDetination} handleLoging={this.handleLoging} />
       <div className="row header_container p-3">
         <div className="col-4 col-sm-3 col-md-3  col-lg-3 header_logo">
           <NavLink to='/'>
@@ -61,7 +71,7 @@ export class Header extends Component {
         <div className="col-sm-6 col-md-6 col-lg-6 header_items">
           <p onClick={()=>this.scrollToDetination(1)}>Lịch Chiếu</p>
           <p onClick={()=>this.scrollToDetination(2)}>Cụm Rạp</p>
-          <p>Tin Tức</p>
+          <p onClick={()=>this.scrollToDetination(3)}>Tin Tức</p>
           <p>Ứng Dụng</p>
         </div>
         <div className="col-sm-3 col-md-3 col-lg-3 header_loging">
@@ -71,15 +81,16 @@ export class Header extends Component {
             
             <div className='header_loging_dropdown'>
             {localStorage.getItem(nameOfLocalStore.TaiKhoan) ? <p onClick={()=>this.handleLoging(1)}>Đăng Xuất</p> : <p onClick={()=>this.handleLoging(2)}>Đăng Nhập</p>}
-            {localStorage.getItem(nameOfLocalStore.TaiKhoan) &&<p>Hồ Sơ</p>}
+           
             <p  onClick={()=>this.handleLoging(3)}>Đăng Ký</p>
+            {localStorage.getItem(nameOfLocalStore.TaiKhoan) &&<NavLink to='/ho-so'><p>Hồ Sơ</p></NavLink>}
          
 
             </div>
           </div>
         </div>
         <div className="moble_nav  col-8 col-sm-9">
-          <i className="fa fa-bars"  />
+          <i className="fa fa-bars" onClick={this.openNavMoble}  />
         </div>
       </div>
     </header>
